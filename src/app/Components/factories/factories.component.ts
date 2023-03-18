@@ -15,12 +15,13 @@ export class FactoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFactories()
-    console.log(this.factories)
+    this.factoryService.createFactory().subscribe((response)=>{console.log(response)})
   }
 
   getFactories():void {
     this.factoryService.getFactories()
       .subscribe(factories=> this.factories = factories);
   }
+
 
 }

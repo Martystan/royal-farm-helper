@@ -17,5 +17,9 @@ export class FactoryService {
   getFactories(): Observable<Factory[]> {
     return this.http.get<Factory[]>(this.factoriesUrl)
   }
+
+  createFactory():Observable<Factory> {
+    return this.http.post<Factory>(this.factoriesUrl, {name: 'hat maker'})
+  }
   constructor(private http: HttpClient) { }
 }
